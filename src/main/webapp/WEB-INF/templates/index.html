@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
+    Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Products</title>
+</head>
+<body>
+<div align="center">
+    <h2>Products</h2>
+    <form method="get" action="search">
+        <input type="text" name="keyword" />
+        <input type="submit" value="Search" />
+    </form>
+    <h3><a href="/new">New Product</a></h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <p th:forEach items="${productList}" var="product">
+            <tr>
+                <td>${customer.id}</td>
+                <td>${customer.name}</td>
+                <td>${customer.price}</td>
+                <td>
+                    <a href="/edit?id=${product.id}">Edit</a>
+
+                    <a href="/delete?id=${product.id}">Delete</a>
+                </td>
+            </tr>
+        </p>
+    </table>
+</div>
+</body>
